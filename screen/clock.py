@@ -26,7 +26,7 @@ currentTime = currentDateAndTime.strftime("%H:%M")
 currentDate = currentDateAndTime.strftime("%d/%m/%y")
 
 if currentHour > 21 or currentHour < 6:
-    then x = WHITE and y = BLACK
+    x = WHITE and y = BLACK
 else:
     x = BLACK and y = WHITE
 
