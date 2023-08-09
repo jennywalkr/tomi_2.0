@@ -19,13 +19,13 @@ disp = LCD_2inch.LCD_2inch()
 disp.Init()
 disp.clear()
 
-print("Height" + disp.height)
+print(disp.height)
 print(disp.width)
 
 image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
 draw = ImageDraw.Draw(image1)
 
-draw.rectangle((5,10,6,11), fill = "BLACK")
+draw.rectangle((0,0,15,15), fill = "BLACK")
 
 disp.ShowImage(image1)
 time.sleep(5)
