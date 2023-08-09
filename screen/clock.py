@@ -26,16 +26,16 @@ currentTime = currentDateAndTime.strftime("%H:%M")
 currentDate = currentDateAndTime.strftime("%d/%m/%y")
 
 if currentHour > 21 or currentHour < 6:
-    x = WHITE and y = BLACK
+    x = "WHITE" and y = "BLACK"
 else:
-    x = BLACK and y = WHITE
+    x = "BLACK" and y = "WHITE"
 
-image1 = Image.new("RGB", (disp.height, disp.width ), "y")
+image1 = Image.new("RGB", (disp.height, disp.width ), y)
 
 timeFont = ImageFont.truetype("../Font/RobotoMono-Regular.ttf",35)
 dateFont = ImageFont.truetype("../Font/Roboto-Regular",20)
-draw.text((50, 50), currentTime, fill = "x",font=timeFont)
-draw.text((100, 175), currentDate, fill = "x",font=dateFont)
+draw.text((50, 50), currentTime, fill = x,font=timeFont)
+draw.text((100, 175), currentDate, fill = x,font=dateFont)
 
 image1=image1.rotate(180)
 disp.ShowImage(image1)
