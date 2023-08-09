@@ -27,6 +27,8 @@ draw = ImageDraw.Draw(image1)
 
 draw.rectangle((0,0,15,15), fill = "BLACK")
 draw.rectangle((305,0,320,15), fill = "BLACK")
+draw.rectangle((0,225,15,240), fill = "BLACK")
+draw.rectangle((305,225,320,240), fill = "BLACK")
 
 image1=image1.rotate(180)
 disp.ShowImage(image1)
