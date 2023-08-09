@@ -27,6 +27,7 @@ draw = ImageDraw.Draw(image1)
 
 draw.rectangle((0,0,15,15), fill = "BLACK")
 
+image1=image1.rotate(180)
 disp.ShowImage(image1)
 time.sleep(5)
 disp.module_exit()
