@@ -80,9 +80,9 @@ def weatherforecast():
     disp.clear()
     weather_icon = response['weather'][0]['icon']
     image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
-    icon = Image.open("/libs/icons/" + weather_icon + ".jpg")
+    icon = Image.open("../lib/icons/" + weather_icon + ".jpg")
     back_image = image1.copy()
-    back_image.paste(image2, (0,140))
+    back_image.paste(icon, (0,140))
     draw = ImageDraw.Draw(back_image)
     draw.text((5, 0),f"{temp_celsius:.2f}°C", fill = (225,68,0),font=RobotoMono38)
     draw.text((240, 0),f"{humidity}%", fill = (205,0,225),font=RobotoMono38)
