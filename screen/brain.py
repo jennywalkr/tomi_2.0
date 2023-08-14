@@ -31,6 +31,7 @@ dateFont = ImageFont.truetype("../Font/RobotoMono-Light.ttf",30)
 RobotoMono38 = ImageFont.truetype("../Font/RobotoMono-Regular.ttf",38)
 RobotoMono28 = ImageFont.truetype("../Font/RobotoMono-Regular.ttf",28)
 RobotoMono18 = ImageFont.truetype("../Font/RobotoMono-Regular.ttf",18)
+codingFont = ImageFont.truetype("../Font/VT323-Regular.ttf",36)
 
 # Weather info
 BASE_URL = "http://api.openweathermap.org/data/2.5/weather?"
@@ -100,7 +101,15 @@ def weatherforecast():
 def coding():
     disp.Init()
     disp.clear()
+    rand1 = str(random.randrange(100000000000000000000000, 99999999999999999999999))
+    rand2 = str(random.randrange(100000000000000000000000, 99999999999999999999999))
+    rand3 = str(random.randrange(10000000000000000000000, 9999999999999999999999))
+    rand4 = str(random.randrange(100000000000000000000000, 99999999999999999999999))
     image1 = Image.new("RGB", (disp.height, disp.width ), "BLACK")
+    draw = ImageDraw.Draw(image1)
+    draw.text((0, 0), rand1, fill = (0,225,0),font=codingFont)
+    draw.text((0, 30), rand2, fill = (0,225,0),font=codingFont)
+    draw.text((0, 60), rand3, fill = (0,225,0),font=codingFont)
     image1=image1.rotate(180)
     disp.ShowImage(image1)
     time.sleep(5)
