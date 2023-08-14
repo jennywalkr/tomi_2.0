@@ -97,6 +97,14 @@ def weatherforecast():
     time.sleep(5)
     disp.module_exit()
 
+def coding():
+    disp.Init()
+    disp.clear()
+    image1 = Image.new("RGB", (disp.height, disp.width ), "BLACK")
+    image1=image1.rotate(180)
+    disp.ShowImage(image1)
+    time.sleep(5)
+    disp.module_exit()
 
 ## Testing ##
-weatherforecast()
+coding()
