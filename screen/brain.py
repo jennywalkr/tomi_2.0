@@ -101,10 +101,16 @@ def weatherforecast():
 def coding():
     disp.Init()
     disp.clear()
-    randomnumber1 = str(random.randrange(10, 99))
     image1 = Image.new("RGB", (disp.height, disp.width ), "BLACK")
     draw = ImageDraw.Draw(image1)
-    draw.text((0, 0), rand1, fill = (0,225,0),font=codingFont)
+    draw.text((0, 0), str(random.randrange(10000000000000000000000, 99999999999999999999999)), fill = (0,225,0),font=codingFont)
+    draw.text((0, 30), str(random.randrange(10000000000000000000000, 99999999999999999999999)), fill = (0,225,0),font=codingFont)
+    draw.text((0, 60), str(random.randrange(10000000000000000000000, 99999999999999999999999)), fill = (0,225,0),font=codingFont)
+    draw.text((0, 90), str(random.randrange(10000000000000000000000, 99999999999999999999999)), fill = (0,225,0),font=codingFont)
+    draw.text((0, 120), str(random.randrange(10000000000000000000000, 99999999999999999999999)), fill = (0,225,0),font=codingFont)
+    draw.text((0, 150), str(random.randrange(10000000000000000000000, 99999999999999999999999)), fill = (0,225,0),font=codingFont)
+    draw.text((0, 180), str(random.randrange(10000000000000000000000, 99999999999999999999999)), fill = (0,225,0),font=codingFont)
+    draw.text((0, 210), str(random.randrange(10000000000000000000000, 99999999999999999999999)), fill = (0,225,0),font=codingFont)
     image1=image1.rotate(180)
     disp.ShowImage(image1)
     time.sleep(5)
@@ -112,3 +118,5 @@ def coding():
 
 ## Testing ##
 coding()
+weatherforecast()
+clock()
