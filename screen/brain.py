@@ -47,19 +47,16 @@ description = response['weather'][0]['description']
 sunrise_time = datetime.utcfromtimestamp(response['sys']['sunrise'] + response['timezone'])
 sunset_time = datetime.utcfromtimestamp(response['sys']['sunset'] + response['timezone'])
 
-
+disp.Init()
 
 def blank():
-    disp.Init()
     disp.clear()
     image1 = Image.new("RGB", (disp.height, disp.width ), "BLACK")
     image1=image1.rotate(180)
     disp.ShowImage(image1)
     time.sleep(5)
-    disp.module_exit()
 
 def clock():
-    disp.Init()
     disp.clear()
     if 7 < currentHour < 21:
         x = "BLACK"
@@ -74,10 +71,8 @@ def clock():
     image1=image1.rotate(180)
     disp.ShowImage(image1)
     time.sleep(30)
-    disp.module_exit()
 
 def weatherforecast():
-    disp.Init()
     disp.clear()
     weather_icon = response['weather'][0]['icon']
     image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
@@ -96,10 +91,8 @@ def weatherforecast():
     image1=back_image.rotate(180)
     disp.ShowImage(image1)
     time.sleep(5)
-    disp.module_exit()
 
 def coding():
-    disp.Init()
     disp.clear()
     image1 = Image.new("RGB", (disp.height, disp.width ), "BLACK")
     draw = ImageDraw.Draw(image1)
@@ -114,9 +107,29 @@ def coding():
     image1=image1.rotate(180)
     disp.ShowImage(image1)
     time.sleep(5)
-    disp.module_exit()
+
+def disco():
+    disp.clear()
+    red = Image.new("RGB", (disp.height, disp.width ), 255,0,0)
+    #image1=image1.rotate(180)
+    disp.ShowImage(red)
+    orange = Image.new("RGB", (disp.height, disp.width ), 255,158,0)
+    disp.ShowImage(orange)
+    yellow = Image.new("RGB", (disp.height, disp.width ), 255,233,0)
+    disp.ShowImage(yellow)
+    green = Image.new("RGB", (disp.height, disp.width ), 0,255,0)
+    disp.ShowImage(green)
+    aqua = Image.new("RGB", (disp.height, disp.width ), 0,255,238)
+    disp.ShowImage(aqua)
+    blue = Image.new("RGB", (disp.height, disp.width ), 0,0,255)
+    disp.ShowImage(blue)
+    purple = Image.new("RGB", (disp.height, disp.width ), 167,0,255)
+    disp.ShowImage(purple)
+    pink = Image.new("RGB", (disp.height, disp.width ), 255,0,240)
+    disp.ShowImage(pink)
 
 ## Testing ##
-coding()
-weatherforecast()
-clock()
+disco()
+
+
+disp.module_exit()
