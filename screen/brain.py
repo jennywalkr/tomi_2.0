@@ -27,6 +27,7 @@ currentDate = currentDateAndTime.strftime("%d/%m/%y")
 
 # Fonts
 timeFont = ImageFont.truetype("../Font/RobotoMono-Regular.ttf",75)
+timerFont = ImageFont.truetype("../Font/RobotoMono-Regular.ttf",100)
 dateFont = ImageFont.truetype("../Font/RobotoMono-Light.ttf",30)
 RobotoMono38 = ImageFont.truetype("../Font/RobotoMono-Regular.ttf",38)
 RobotoMono28 = ImageFont.truetype("../Font/RobotoMono-Regular.ttf",28)
@@ -135,14 +136,30 @@ def disco():
     disp.ShowImage(pink)
     time.sleep(0.5)
 
+def countdownTimer():
+    mins = int(input("enter time in minutes: "))
+    myTime = mins*60
+    disp.clear()
+    for x in range(myTime,0,-1):
+        st = time.time()
+        seconds = x % 60
+        minutes = int(x / 60) % 60
+        timer = f"{minutes:02}:{seconds:02}"
+        image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
+        draw = ImageDraw.Draw(image1)
+        draw.text((15, 50), timer, fill = "BLACK",font=timerFont)
+        image1=image1.rotate(180)
+        disp.ShowImage(image1)
+        print(timer)
+        time.sleep(0.875)
+        et = time.time()
+        timeTaken = et -st
+        print(timeTaken)
+
+
+
 ## Testing ##
-weatherforecast()
-time.sleep(2)
-coding()
-time.sleep(1)
-coding()
-time.sleep(1)
-disco()
+countdownTimer()
 
 
 disp.module_exit()
