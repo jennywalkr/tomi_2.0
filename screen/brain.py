@@ -136,6 +136,12 @@ def disco():
     time.sleep(0.5)
 
 ## Testing ##
+weatherforecast()
+time.sleep(2)
+coding()
+time.sleep(1)
+coding()
+time.sleep(1)
 disco()
 
 
