@@ -141,7 +141,6 @@ def countdownTimer():
     myTime = mins*60
     disp.clear()
     for x in range(myTime,0,-1):
-        st = time.time()
         seconds = x % 60
         minutes = int(x / 60) % 60
         timer = f"{minutes:02}:{seconds:02}"
@@ -152,11 +151,19 @@ def countdownTimer():
         disp.ShowImage(image1)
         print(timer)
         time.sleep(0.875)
-        et = time.time()
-        timeTaken = et -st
-        print(timeTaken)
 
-
+def earth():
+    disp.clear()
+    for x in range(1,16,1)
+    frame = 
+    weather_icon = response['weather'][0]['icon']
+    image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
+    icon = Image.open("../lib/icons/" + weather_icon + ".jpg")
+    back_image = image1.copy()
+    back_image.paste(icon, (0,140))
+    image1=back_image.rotate(180)
+    disp.ShowImage(image1)
+    time.sleep(5)
 
 ## Testing ##
 countdownTimer()
