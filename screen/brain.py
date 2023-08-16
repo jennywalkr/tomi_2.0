@@ -154,13 +154,11 @@ def countdownTimer():
 
 def earth():
     disp.clear()
-    for x in range(1,16,1)
-    frame = 
-    weather_icon = response['weather'][0]['icon']
+    for x in range(1,16):
+    icon = Image.open("../lib/icons/frame" + x + ".jpg")
     image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
-    icon = Image.open("../lib/icons/" + weather_icon + ".jpg")
     back_image = image1.copy()
-    back_image.paste(icon, (0,140))
+    back_image.paste(icon, (50,50))
     image1=back_image.rotate(180)
     disp.ShowImage(image1)
     time.sleep(5)
@@ -169,4 +167,4 @@ def earth():
 countdownTimer()
 
 
-disp.module_exit()
+disp.module_exit()     
