@@ -144,17 +144,19 @@ def countdown():
     while seconds > 0:
         timer = datetime.timedelta(seconds)
         print(timer)
+        time.sleep(1)
+        seconds -= 1
 
 def earth():
-    disp.clear()
-    for x in range(1,16):
-    icon = Image.open("../lib/icons/frame" + x + ".jpg")
-    image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
-    back_image = image1.copy()
-    back_image.paste(icon, (50,50))
-    image1=back_image.rotate(180)
-    disp.ShowImage(image1)
-    time.sleep(5)
+    #disp.clear()
+    #for x in range(1,16):
+    #icon = Image.open("../lib/icons/frame" + x + ".jpg")
+    #image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
+    #back_image = image1.copy()
+    #back_image.paste(icon, (50,50))
+    #image1=back_image.rotate(180)
+    #disp.ShowImage(image1)
+    #time.sleep(5)
 
 ## Testing ##
 countdown()
