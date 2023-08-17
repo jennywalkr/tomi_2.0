@@ -140,9 +140,9 @@ def disco():
 
 def countdown():
     mins = int(input("enter time in minutes: "))
-    seconds = mins*60
+    secs = mins*60
     while seconds > 0:
-        timer = timedelta(seconds)
+        timer = timedelta(seconds = secs)
         print(timer)
         time.sleep(1)
         seconds -= 1
@@ -160,4 +160,4 @@ def countdown():
 
 ## Testing ##
 countdown()
-disp.module_exit()     
+disp.module_exit()
