@@ -142,10 +142,16 @@ def countdown():
     mins = int(input("enter time in minutes: "))
     secs = mins*60
     while secs > 0:
-        timer = timedelta(seconds = secs)
+        timer = str(timedelta(seconds = secs))
+        image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
+        draw = ImageDraw.Draw(image1)
+        draw.text((15, 50), timer, fill = "BLACK",font=timerFont)
+        image1=image1.rotate(180)
+        disp.ShowImage(image1)
         print(timer)
         time.sleep(1)
         secs -= 1
+ 
 
 #def earth():
     #disp.clear()
