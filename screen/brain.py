@@ -3,6 +3,7 @@ import sys
 import time
 import logging
 import random
+import sched
 import requests
 import spidev as SPI
 sys.path.append("..")
@@ -136,21 +137,13 @@ def disco():
     disp.ShowImage(pink)
     time.sleep(0.5)
 
-def countdownTimer():
+
+def countdown():
     mins = int(input("enter time in minutes: "))
-    myTime = mins*60
-    disp.clear()
-    for x in range(myTime,0,-1):
-        seconds = x % 60
-        minutes = int(x / 60) % 60
-        timer = f"{minutes:02}:{seconds:02}"
-        image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
-        draw = ImageDraw.Draw(image1)
-        draw.text((15, 50), timer, fill = "BLACK",font=timerFont)
-        image1=image1.rotate(180)
-        disp.ShowImage(image1)
+    seconds = mins*60
+    while seconds > 0:
+        timer = datetime.timedelta(seconds)
         print(timer)
-        time.sleep(0.875)
 
 def earth():
     disp.clear()
@@ -164,7 +157,7 @@ def earth():
     time.sleep(5)
 
 ## Testing ##
-countdownTimer()
+countdown()
 
 
 disp.module_exit()     
