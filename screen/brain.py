@@ -3,7 +3,7 @@ import sys
 import time
 import logging
 import random
-import sched
+import schedule
 import requests
 import spidev as SPI
 sys.path.append("..")
@@ -141,19 +141,20 @@ def disco():
 def countdown():
     mins = int(input("enter time in minutes: "))
     secs = mins*60
-    schedule.every().seconds.do(timer)
     def timer():
         while secs > 0:
-            timer = str(timedelta(seconds = secs))
+            time = str(timedelta(seconds = secs))
             image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
             draw = ImageDraw.Draw(image1)
-            draw.text((4, 65), timer, fill = "BLACK",font=timerFont)
+            draw.text((4, 65), time, fill = "BLACK",font=timerFont)
             image1=image1.rotate(180)
             disp.ShowImage(image1)
-            print(timer)
-            time.sleep(1)
+            print(time)
             secs -= 1
- 
+    schedule.every().second.do(timer)
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
 
 #def earth():
     #disp.clear()
