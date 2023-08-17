@@ -9,7 +9,7 @@ import spidev as SPI
 sys.path.append("..")
 from lib import LCD_2inch
 from PIL import Image,ImageDraw,ImageFont
-from datetime import datetime
+from datetime import datetime, timedelta
 
 # Raspberry Pi pin configuration:
 RST = 27
@@ -142,12 +142,12 @@ def countdown():
     mins = int(input("enter time in minutes: "))
     seconds = mins*60
     while seconds > 0:
-        timer = datetime.timedelta(seconds)
+        timer = timedelta(seconds)
         print(timer)
         time.sleep(1)
         seconds -= 1
 
-def earth():
+#def earth():
     #disp.clear()
     #for x in range(1,16):
     #icon = Image.open("../lib/icons/frame" + x + ".jpg")
@@ -160,6 +160,4 @@ def earth():
 
 ## Testing ##
 countdown()
-
-
 disp.module_exit()     
