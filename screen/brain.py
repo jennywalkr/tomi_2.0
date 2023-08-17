@@ -141,11 +141,11 @@ def disco():
 def countdown():
     mins = int(input("enter time in minutes: "))
     secs = mins*60
-    while seconds > 0:
+    while secs > 0:
         timer = timedelta(seconds = secs)
         print(timer)
         time.sleep(1)
-        seconds -= 1
+        secs -= 1
 
 #def earth():
     #disp.clear()
