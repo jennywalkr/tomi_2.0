@@ -111,37 +111,38 @@ def coding():
     time.sleep(5)
 
 def disco():
-    disp.clear()
-    red = Image.new("RGB", (disp.height, disp.width ), (255,0,0))
-    disp.ShowImage(red)
-    time.sleep(0.5)
-    orange = Image.new("RGB", (disp.height, disp.width ), (255,158,0))
-    disp.ShowImage(orange)
-    time.sleep(0.5)
-    yellow = Image.new("RGB", (disp.height, disp.width ), (255,233,0))
-    disp.ShowImage(yellow)
-    time.sleep(0.5)
-    green = Image.new("RGB", (disp.height, disp.width ), (0,255,0))
-    disp.ShowImage(green)
-    time.sleep(0.5)
-    aqua = Image.new("RGB", (disp.height, disp.width ), (0,255,238))
-    disp.ShowImage(aqua)
-    time.sleep(0.5)
-    blue = Image.new("RGB", (disp.height, disp.width ), (0,0,255))
-    disp.ShowImage(blue)
-    time.sleep(0.5)
-    purple = Image.new("RGB", (disp.height, disp.width ), (167,0,255))
-    disp.ShowImage(purple)
-    time.sleep(0.5)
-    pink = Image.new("RGB", (disp.height, disp.width ), (255,0,240))
-    disp.ShowImage(pink)
-    time.sleep(0.5)
+    for a = [225, 225,225,0, 0, 0, 167, 255] and b = [0, 158, 233, 255, 255, 0, 0, 0] and c = [0, 0, 0, 0, 238, 255, 255, 240]:
+        disp.clear()
+        red = Image.new("RGB", (disp.height, disp.width ), (a,b,c))
+        disp.ShowImage(red)
+        time.sleep(0.5)
+    #orange = Image.new("RGB", (disp.height, disp.width ), (255,158,0))
+    #disp.ShowImage(orange)
+    #time.sleep(0.5)
+    #yellow = Image.new("RGB", (disp.height, disp.width ), (255,233,0))
+    #disp.ShowImage(yellow)
+    #time.sleep(0.5)
+    #green = Image.new("RGB", (disp.height, disp.width ), (0,255,0))
+    #disp.ShowImage(green)
+    #time.sleep(0.5)
+    #aqua = Image.new("RGB", (disp.height, disp.width ), (0,255,238))
+    #disp.ShowImage(aqua)
+    #time.sleep(0.5)
+    #blue = Image.new("RGB", (disp.height, disp.width ), (0,0,255))
+    #disp.ShowImage(blue)
+    #time.sleep(0.5)
+    #purple = Image.new("RGB", (disp.height, disp.width ), (167,0,255))
+    #disp.ShowImage(purple)
+    #time.sleep(0.5)
+    #pink = Image.new("RGB", (disp.height, disp.width ), (255,0,240))
+    #disp.ShowImage(pink)
+    #time.sleep(0.5)
 
 
 def countdown():
     mins = int(input("enter time in minutes: "))
     secs = mins*60
-    def timer():
+    def timer(secs):
         while secs > 0:
             time = str(timedelta(seconds = secs))
             image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
@@ -151,10 +152,8 @@ def countdown():
             disp.ShowImage(image1)
             print(time)
             secs -= 1
-    schedule.every().second.do(timer)
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+    schedule.every().second.do(timer(secs))
+    schedule.run_pending()
 
 #def earth():
     #disp.clear()
