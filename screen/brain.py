@@ -111,7 +111,7 @@ def coding():
     time.sleep(5)
 
 def disco():
-    for a = [225, 225,225,0, 0, 0, 167, 255] and b = [0, 158, 233, 255, 255, 0, 0, 0] and c = [0, 0, 0, 0, 238, 255, 255, 240]:
+    for a in [225, 225,225,0, 0, 0, 167, 255], b in [0, 158, 233, 255, 255, 0, 0, 0], c in [0, 0, 0, 0, 238, 255, 255, 240]:
         disp.clear()
         red = Image.new("RGB", (disp.height, disp.width ), (a,b,c))
         disp.ShowImage(red)
@@ -167,5 +167,5 @@ def countdown():
     #time.sleep(5)
 
 ## Testing ##
-countdown()
+disco()
 disp.module_exit()
