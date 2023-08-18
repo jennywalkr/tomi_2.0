@@ -110,34 +110,13 @@ def coding():
     disp.ShowImage(image1)
     time.sleep(5)
 
-def disco():
-    for a in [225, 225,225,0, 0, 0, 167, 255], b in [0, 158, 233, 255, 255, 0, 0, 0], c in [0, 0, 0, 0, 238, 255, 255, 240]:
-        disp.clear()
-        red = Image.new("RGB", (disp.height, disp.width ), (a,b,c))
-        disp.ShowImage(red)
-        time.sleep(0.5)
-    #orange = Image.new("RGB", (disp.height, disp.width ), (255,158,0))
-    #disp.ShowImage(orange)
-    #time.sleep(0.5)
-    #yellow = Image.new("RGB", (disp.height, disp.width ), (255,233,0))
-    #disp.ShowImage(yellow)
-    #time.sleep(0.5)
-    #green = Image.new("RGB", (disp.height, disp.width ), (0,255,0))
-    #disp.ShowImage(green)
-    #time.sleep(0.5)
-    #aqua = Image.new("RGB", (disp.height, disp.width ), (0,255,238))
-    #disp.ShowImage(aqua)
-    #time.sleep(0.5)
-    #blue = Image.new("RGB", (disp.height, disp.width ), (0,0,255))
-    #disp.ShowImage(blue)
-    #time.sleep(0.5)
-    #purple = Image.new("RGB", (disp.height, disp.width ), (167,0,255))
-    #disp.ShowImage(purple)
-    #time.sleep(0.5)
-    #pink = Image.new("RGB", (disp.height, disp.width ), (255,0,240))
-    #disp.ShowImage(pink)
-    #time.sleep(0.5)
-
+#def disco():
+    #for a in [225, 225,225,0, 0, 0, 167, 255], b in [0, 158, 233, 255, 255, 0, 0, 0], c in [0, 0, 0, 0, 238, 255, 255, 240]:
+    #    disp.clear()
+    #    red = Image.new("RGB", (disp.height, disp.width ), (a,b,c))
+    #    disp.ShowImage(red)
+    #    time.sleep(0.5)
+    
 
 def countdown():
     mins = int(input("enter time in minutes: "))
@@ -155,17 +134,17 @@ def countdown():
     schedule.every().second.do(timer(secs))
     schedule.run_pending()
 
-#def earth():
-    #disp.clear()
-    #for x in range(1,16):
-    #icon = Image.open("../lib/icons/frame" + x + ".jpg")
-    #image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
-    #back_image = image1.copy()
-    #back_image.paste(icon, (50,50))
-    #image1=back_image.rotate(180)
-    #disp.ShowImage(image1)
-    #time.sleep(5)
+def earth():
+    disp.clear()
+    for x in range(1,16):
+    icon = Image.open("../lib/icons/frame" + x + ".jpg")
+    image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
+    back_image = image1.copy()
+    back_image.paste(icon, (50,50))
+    image1=back_image.rotate(180)
+    disp.ShowImage(image1)
+    time.sleep(2)
 
 ## Testing ##
-disco()
+earth()
 disp.module_exit()
