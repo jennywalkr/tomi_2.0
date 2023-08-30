@@ -110,12 +110,12 @@ def coding():
     disp.ShowImage(image1)
     time.sleep(5)
 
-#def disco():
-    #for a in [225, 225,225,0, 0, 0, 167, 255], b in [0, 158, 233, 255, 255, 0, 0, 0], c in [0, 0, 0, 0, 238, 255, 255, 240]:
-    #    disp.clear()
-    #    red = Image.new("RGB", (disp.height, disp.width ), (a,b,c))
-    #    disp.ShowImage(red)
-    #    time.sleep(0.5)
+def disco():
+    for rgb in [[225,0,0], [225, 158, 0],[225, 233, 0],[0, 255, 0], [0, 255, 238], [0, 0, 255], [167, 0, 255], [255, 0 , 240]]:
+        disp.clear()
+        red = Image.new("RGB", (disp.height, disp.width ), (a,b,c))
+        disp.ShowImage(red)
+        time.sleep(0.5)
     
 
 def countdown():
@@ -140,10 +140,11 @@ def earth():
         icon = Image.open("../lib/icons/" + "frame" + str(x) + ".jpg")
         image1 = Image.new("RGB", (disp.height, disp.width ), "WHITE")
         back_image = image1.copy()
-        back_image.paste(icon, (100,45))
+        back_image.paste(icon, (75,45))
         image1=back_image.rotate(180)
         disp.ShowImage(image1)
+        time.sleep(0.25)
 
 ## Testing ##
-earth()
+disco()
 disp.module_exit()
